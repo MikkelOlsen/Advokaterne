@@ -1,5 +1,92 @@
-<div><br><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati eaque modi beatae dolore assumenda hic esse optio dolores, enim dolorem natus voluptatum adipisci consequatur laudantium harum tempora, repellendus consectetur culpa.</span><span>Iusto esse est, itaque eos. Voluptatum incidunt neque laboriosam, vel aspernatur, ad consequuntur sequi itaque tempora ab magni qui! Illo voluptatum neque ipsum, sunt magnam animi incidunt perferendis enim iure!</span></br></div>
-<div><br><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit quaerat eligendi recusandae odio dolore qui aspernatur impedit doloremque velit accusantium. Vero hic veniam perspiciatis blanditiis suscipit perferendis sed, sit voluptate.</span><span>Odio, debitis, minima. Ad tempora dolore earum, expedita doloremque porro sapiente iusto mollitia facilis suscipit nostrum laborum provident, velit itaque maiores. Accusamus vel a pariatur quidem optio, neque enim sint.</span></br></div>
-<div><br><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque a maxime architecto nulla, delectus fuga quasi repellendus reprehenderit quidem eum sapiente ipsa laborum recusandae consectetur quo asperiores, nisi, non cumque.</span><span>Porro nisi eligendi illo, similique possimus a distinctio qui inventore reiciendis rerum sit incidunt fuga, doloribus totam, excepturi saepe unde quaerat veritatis. Eum officiis perferendis consequuntur nisi ratione, impedit placeat!</span></br></div>
-<div><br><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet delectus molestiae reiciendis nihil, unde suscipit ullam illum quis sit facilis quisquam nemo odio, eius culpa quos quasi veritatis, quae quaerat.</span><span>Voluptatem vel dolores vitae dolor quae recusandae accusamus est nisi esse in fuga a quod impedit possimus aliquid atque necessitatibus, aperiam quia officiis! Optio culpa cupiditate reiciendis ratione, consequuntur quo?</span></br></div>
-<div><br><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga veritatis laborum deleniti aut earum recusandae maxime! Unde quisquam quas voluptas explicabo animi, quam nemo neque sit placeat ipsum, ducimus illum.</span><span>Obcaecati, quae, fugiat? Eius architecto in, quia placeat incidunt iusto eveniet id debitis tempore, aliquid ratione itaque totam, voluptatem hic cupiditate nisi. Minima id reprehenderit provident ducimus officiis! Exercitationem, placeat.</span></br></div>
+<h1>VI ER BILLIGE & <br>VI TAGER ALLE OPGAVER STORE SOM SMÅ</h2>
+
+<section class="container row">
+    <section class="col-md-8">
+        
+    <div class="row">
+        <div class="col">
+                <h4>SERVICES</h4>
+            <div class="row">
+                <div class="col-md-5">
+                    <img src="./Advokaterne_images/agent.jpg" class="front-img" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="col-md-5">
+                    <img src="./Advokaterne_images/agent.jpg" class="front-img" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="col-md-5 borderbox">
+                    <img src="./Advokaterne_images/agent.jpg" class="front-img" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="col-md-5 borderbox">
+                    <img src="./Advokaterne_images/agent.jpg" class="front-img" alt="">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+        
+</div>
+
+<div class="row">
+    <div class="col">
+        <h4>CHEFENS BLOG</h4>
+        <div class="row">
+            <div class="col-md-2">
+                <img src="./Advokaterne_images/work.jpg" class="front-img" alt="">
+            </div>         
+            <div class="col-md-8">
+                <p>DETTE ER BARE EKSEMPEL TEKST <br>
+                13 Apr 2012 <br>
+                Praesent risus nunc, elementum quis ultricies non, rhoncus at urna. Etiam nunc massa, consectetur at consequat eu, semper placerat ligula. </p>
+            </div>   
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <img src="./Advokaterne_images/work.jpg" class="front-img" alt="">
+            </div>         
+            <div class="col-md-8">
+                <p>DETTE ER BARE EKSEMPEL TEKST <br>
+                13 Apr 2012 <br>
+                Praesent risus nunc, elementum quis ultricies non, rhoncus at urna. Etiam nunc massa, consectetur at consequat eu, semper placerat ligula. </p>
+            </div>   
+        </div>
+    </div>    
+</div>
+    </section>
+
+
+    <section class="col-md-4">
+        <div class="row">
+            <div class="col">
+                        <h4>OM OS</h4>
+            <img src="./Advokaterne_images/people.jpg" class="front-img" alt="">     
+            <p>Se eksempel tekst på hvorledes det kan se ud Aenean at nisl fringilla purus lacinia facilisis at vitae lectus. Nam varius posuere velit, nec blandit diam vehicula quis. Aliquam erat volutpat.</p>        
+        </div>
+            <hr>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <h4>RIS OG ROS</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+        <hr>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <form action="" name="search" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                <span class="input-group-btn">
+                    <button class="btn btn-dark" type="button">Go!</button>
+                </span>
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</section>
