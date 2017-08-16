@@ -1,6 +1,6 @@
 <section style="margin-top:60px;" class="row">
 
-    <section class="col-md-8">
+    <section class="col-lg-8">
 
         <section class="col">
             <h6>CHEFENS BLOG</h6>
@@ -34,8 +34,8 @@
 
     </section>
 
-    <section style="margin-top:80px;" class="col">
-        <div class="col-md-12">
+    <section class="col padding-top">
+        <div class="col-lg-12">
             <h6>BLOG NYHEDER</h6>
             <ul class="bloglist">
                 <li>test</li>
@@ -47,7 +47,7 @@
         </div>
         <hr>
 
-        <div class="col-md-12">
+        <div class="col-lg-12">
             <h6>KATEGORIER</h6>
             <ul class="bloglist">
                 <li>test</li>
@@ -59,7 +59,7 @@
         </div>
         <hr>
 
-        <div class="col-md-12">
+        <div class="col-lg-12">
             <h6>MÅNEDSARKIV</h6>
             <ul class="bloglist">
                 <li>test</li>

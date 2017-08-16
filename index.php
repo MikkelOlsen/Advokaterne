@@ -42,7 +42,7 @@
 
                     // OVERALL CASES
                     case 'login';
-                        include_once './frontend/plugins/users/login.php';
+                        include_once './admin/plugins/login.php';
                         break;
                     case 'logout';
                         include_once './frontend/plugins/users/logout.php';
@@ -60,6 +60,17 @@
                         break;
                     case 'omos';
                         include_once './frontend/plugins/about.php';
+                        break;
+                    case 'kontakt';
+                        include_once './frontend/plugins/contact.php';
+                        break;
+
+                    //ADMIN CASES
+                    case 'admin';
+                        include_once './admin/plugins/login.php';
+                        break;
+                    case 'dashboard';
+                        include_once './admin/plugins/dashboard.php';
                         break;
 
 

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-12 col-sm-12 col-12">
-                <h2 class="header-text">ADVOKATERNE</h2>
+                <h2><a href="?p=home" class="header-link header-text">ADVOKATERNE</a></h2>
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12 col-12"> 
                 <nav class="menu">
@@ -20,7 +20,7 @@
                             <a class="nav-link" href="?p=omos">Om Os</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Kontakt</a>
+                            <a class="nav-link" href="?p=kontakt">Kontakt</a>
                         </li>
                     </ul>
                 </nav>

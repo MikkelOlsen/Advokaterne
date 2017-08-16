@@ -1,7 +1,7 @@
 <h1>VI ER BILLIGE & <br>VI TAGER ALLE OPGAVER STORE SOM SMÅ</h1>
 
 <section class="container row">
-    <section class="col-md-8">
+    <section class="col-lg-8">
         
     <div class="row">
         <div class="col">
@@ -32,7 +32,7 @@
     <div class="col">
         <h4>CHEFENS BLOG</h4>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3 col-lg-2">
                 <img src="./Advokaterne_images/work.jpg" class="front-img" alt="">
             </div>         
             <div class="col-md-8">
@@ -42,7 +42,7 @@
             </div>   
         </div>
         <div class="row">
-            <div class="col-md-2">
+            <div class="col-md-3 col-lg-2">
                 <img src="./Advokaterne_images/work.jpg" class="front-img" alt="">
             </div>         
             <div class="col-md-8">
@@ -56,7 +56,7 @@
     </section>
 
 
-    <section class="col-md-4">
+    <section class="col-lg-4 col-md-12">
         <div class="row">
             <div class="col">
                         <h4>OM OS</h4>
