@@ -1,4 +1,4 @@
-<h1>VI ER BILLIGE & <br>VI TAGER ALLE OPGAVER STORE SOM SMÅ</h2>
+<h1>VI ER BILLIGE & <br>VI TAGER ALLE OPGAVER STORE SOM SMÅ</h1>
 
 <section class="container row">
     <section class="col-md-8">

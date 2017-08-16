@@ -5,19 +5,19 @@
                 <h2 class="header-text">ADVOKATERNE</h2>
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12 col-12"> 
-                <nav>
+                <nav class="menu">
                     <ul class="nav justify-content-end" id="navlist">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Home</a>
+                            <a class="nav-link" href="?p=home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
+                            <a class="nav-link" href="?p=services">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Chefens Blog</a>
+                            <a class="nav-link" href="?p=blog">Chefens Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Om Os</a>
+                            <a class="nav-link" href="?p=omos">Om Os</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Kontakt</a>
@@ -28,3 +28,4 @@
         </div>
     </div>
 </header>
+

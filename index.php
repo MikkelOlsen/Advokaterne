@@ -19,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Advokaterne</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./frontend/assets/css/style.css">
   <!-- Include jQuery -->
 
@@ -41,17 +41,26 @@
 
 
                     // OVERALL CASES
-                    case 'login' :
+                    case 'login';
                         include_once './frontend/plugins/users/login.php';
                         break;
                     case 'logout';
                         include_once './frontend/plugins/users/logout.php';
                         break;
-                    case 'frontpage';
+                    case 'home';
                         include_once './frontend/plugins/frontpage.php';
                         break;
-                    
-                    
+
+                    //PAGE CASES
+                    case 'services';
+                        include_once './frontend/plugins/services.php';
+                        break;
+                    case 'blog';
+                        include_once './frontend/plugins/blog.php';
+                        break;
+                    case 'omos';
+                        include_once './frontend/plugins/about.php';
+                        break;
 
 
                     
@@ -83,5 +92,12 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+<script>
+        var url = window.location.href;
+        $('.menu a').filter(function() {
+            return this.href == url;
+        }).addClass('active');
+</script>
 </body>
 </html>
