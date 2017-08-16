@@ -70,7 +70,7 @@
                         include_once './admin/plugins/login.php';
                         break;
                     case 'dashboard';
-                        include_once './admin/plugins/dashboard.php';
+                        include_once './admin/dashboard.php';
                         break;
 
 
