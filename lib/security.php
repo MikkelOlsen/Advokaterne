@@ -91,7 +91,7 @@ function secIsLoggedIn() {
 function secCheckLevel(){
 		global $conn;
 		$stmt = $conn->prepare("SELECT userroles.niveau FROM `users`
-								INNER JOIN `userroles` ON `userroles`.`id` = `users`.`fk_userroles`
+								INNER JOIN `userroles` ON `userroles`.`id` = `users`.`fk_userrole`
 								WHERE `users`.`email` = :mail");
     	$stmt->bindParam(':mail', $_SESSION['username'], PDO::PARAM_STR);
 		$stmt->execute();

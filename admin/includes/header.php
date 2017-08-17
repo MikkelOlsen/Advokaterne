@@ -1,17 +1,17 @@
-<div class="container-fluid mynav">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-3 col-xs-1 p-l-0 p-r-0 in" id="sidebar">
+        <div class="col-md-12 col-xs-1 p-l-0 p-r-0 in" id="sidebar">
             <div class="list-group panel">
 
-
+                <h4 class="text-center list-group-item"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $user['navn']?></h4>
                 <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="hidden-sm-down">Blog</span> </a>
                 <div class="collapse" id="menu1">
-                    <a href="#" class="list-group-item" data-parent="#menu1">Ny post</a>
-                    <a href="#" class="list-group-item" data-parent="#menu1">Se posts</a>
+                    <a href="?p=dashboard&view=nypost" class="list-group-item" data-parent="#menu1">Ny post</a>
+                    <a href="?p=dashboard&view=posts" class="list-group-item" data-parent="#menu1">Se posts</a>
                     <a href="#menu1sub2" class="list-group-item" data-toggle="collapse" aria-expanded="false">Blog Kategorier </a>
                     <div class="collapse" id="menu1sub2">
-                        <a href="#" class="list-group-item" data-parent="#menu1sub2">Opret kategori</a>
-                        <a href="#" class="list-group-item" data-parent="#menu1sub2">Se kategorier</a>
+                        <a href="?p=dashboard&view=nykat" class="list-group-item" data-parent="#menu1sub2">Opret kategori</a>
+                        <a href="?p=dashboard&view=viskat" class="list-group-item" data-parent="#menu1sub2">Se kategorier</a>
                     </div>
                 </div>
 
@@ -35,7 +35,7 @@
                 <a href="#menu4" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="hidden-sm-down">Kundeudtalelser </span></a>
                 <div class="collapse" id="menu4">
                     <a href="#" class="list-group-item" data-parent="#menu4">Opret ny kundeudtalelse</a>
-                    <a href="#" class="list-group-item" data-parent="#menu4">Liste af kundeudtalelsere</a>
+                    <a href="#" class="list-group-item" data-parent="#menu4">Liste af kundeudtalelser</a>
                 </div>
 
 

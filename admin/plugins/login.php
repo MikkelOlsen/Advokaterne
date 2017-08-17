@@ -16,7 +16,7 @@
                     if(!password_verify($password, $result->password)) {
                         $error['password'] = 'Forkert adgangskode';
                     } else {
-                        $_SESSION['userid'] = $result->brugerId;
+                        $_SESSION['userid'] = $result->id;
                         $_SESSION['username'] = $result->email;
                         header('Location: ?p=dashboard');
                     }

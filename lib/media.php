@@ -7,7 +7,7 @@
 	 * @param array $mimeType default ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/bmp']
 	 * @return array
 	 */
-	function mediaImageUploader($inputFieldName, $mimeType = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/bmp'], $folder = '../media'){
+	function mediaImageUploader($inputFieldName, $mimeType = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/bmp'], $folder = './media'){
 		$uploadError = array(
 			1 => 'Filens størrelse overskrider \'upload_max_filesize\' directivet i php.ini.',
 			2 => 'Filen størrelse overskride \'MAX_FILE_SIZE\' directivet i HTML formen.',

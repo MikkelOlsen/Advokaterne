@@ -5,7 +5,7 @@
     if(secCheckMethod('POST')) {
         $post = secGetInputArray(INPUT_POST);
         $error = [];
-        print_r($post);
+        //print_r($post);
         if(!secValidateToken($post['_once'], 600)) {
             $error['session'] = 'Din session er udløbet. Prøv igen.';
         }

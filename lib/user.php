@@ -4,7 +4,7 @@
 
 function userGet($id) {
     global $conn;
-     $stmt = $conn->prepare("SELECT userroles.niveau, users.email, users.navn
+     $stmt = $conn->prepare("SELECT userroles.niveau, users.email, users.navn, users.id
                              FROM users 
                              INNER JOIN userroles
                              ON users.fk_userrole = userroles.id

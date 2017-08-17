@@ -208,6 +208,15 @@ li .nav-link {
     ADMIN
 */
 
+.mynav {
+    padding-top: 30px;
+}
+
+.blog-img {
+    width: 100px;
+    max-height: 100px;
+}
+
 #sidebar {
     border-radius: 0.5em;
     background-color: #333;
