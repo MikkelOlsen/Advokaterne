@@ -1,4 +1,9 @@
 <?php
+
+    if(secIsLoggedIn()) {
+        header('Location: ?p=dashboard');
+    }
+
     if(secCheckMethod('POST')) {
         $post = secGetInputArray(INPUT_POST);
         $error = [];

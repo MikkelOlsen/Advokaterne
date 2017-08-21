@@ -79,7 +79,6 @@
 		}
     } 
 
-$selected = "";
 
     $stmt = $conn->prepare("SELECT categoryName, id FROM blogcategory");
 			$stmt->execute();
@@ -103,10 +102,11 @@ $selected = "";
         <div class="form-group col-md-12">
 		<select name="cat" class="custom-select">
 			<?php foreach($stmt->fetchAll() as $value){
-                if($value->id === $collect->catID) {
+                $selected = "";                
+                if($value->id === $collect['catID']) {
                     $selected = "selected";
                 }
-				echo '<option value="'.$value->id.'">'.$value->categoryName.'</option>';
+				echo '<option '.$selected.' value="'.$value->id.'">'.$value->categoryName.'</option>';
 			}
 				?>
 		</select>

@@ -8,6 +8,7 @@
 </div>
 <div class="col-md-9 mynav">
 <?php
+if(secIsLoggedIn()) {
 @$user = userGet($_SESSION['userid']);
 //print_r($user);
         if(secCheckMethod('GET') || secCheckMethod('POST')) {
@@ -17,6 +18,9 @@
                     //OVERALL CASES
                     case 'home';
                         include_once '/plugins/home.php';
+                        break;
+                    case 'logout';
+                        include_once '/plugins/logout.php';
                         break;
 
 
@@ -51,8 +55,29 @@
 
 
                     //USER CASES
-                    case 'create';
+                    case 'usercreate';
                         include_once '/admin/plugins/users/create.php';
+                        break;
+                    case 'users';
+                        include_once '/admin/plugins/users/show.php';
+                        break;
+                    case 'deluser';
+                        include_once '/admin/plugins/users/delete.php';
+                        break;
+                    case 'edituser';
+                        include_once '/admin/plugins/users/edit.php';
+                        break;
+
+                    
+                    //INFORMATION CASES
+                    case 'information';
+                        include_once '/admin/plugins/info/edit.php';
+                        break;
+
+                    
+                    //SERVICE CASES
+                    case 'nyservice';
+                        include_once '/admin/plugins/service/create.php';
                         break;
 
                    
@@ -60,15 +85,18 @@
                     
 
 
-                    default: 
-                        header('Location: ?p=dashboard&view=home');
-                        break;
+                        default: 
+                            header('Location: ?p=dashboard&view=home');
+                            break;
+                    }
                 }
+                else {
+                    header('Location: ?p=dashboard&view=home');
+                }
+                
             }
-            else {
-            header('Location: ?p=dashboard&view=home');
-            }
-            
+        } else {
+            header('Location: ?p=login');
         }
 
 ?>

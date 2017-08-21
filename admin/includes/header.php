@@ -3,7 +3,7 @@
         <div class="col-md-12 col-xs-1 p-l-0 p-r-0 in" id="sidebar">
             <div class="list-group panel">
 
-                <h4 class="text-center list-group-item"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $user['navn']?></h4>
+                <a href="?p=dashboard&view=home"><h4 class="text-center list-group-item"><i class="fa fa-user" aria-hidden="true"></i> <?php echo $user['navn']?></h4></a>
                 <a href="#menu1" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-dashboard"></i> <span class="hidden-sm-down">Blog</span> </a>
                 <div class="collapse" id="menu1">
                     <a href="?p=dashboard&view=nypost" class="list-group-item" data-parent="#menu1">Ny post</a>
@@ -18,17 +18,17 @@
 
                 <a href="#menu2" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="hidden-sm-down">Brugere </span></a>
                 <div class="collapse" id="menu2">
-                    <a href="#" class="list-group-item" data-parent="#menu2">Opret ny bruger</a>
-                    <a href="#" class="list-group-item" data-parent="#menu2">Liste af brugere</a>
+                    <a href="?p=dashboard&view=usercreate" class="list-group-item" data-parent="#menu2">Opret ny bruger</a>
+                    <a href="?p=dashboard&view=users" class="list-group-item" data-parent="#menu2">Liste af brugere</a>
                 </div>
 
 
-                <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Informations side</span></a>
+                <a href="?p=dashboard&view=information" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Informations side</span></a>
                 
                 
                 <a href="#menu3" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="hidden-sm-down">Service </span></a>
                 <div class="collapse" id="menu3">
-                    <a href="#" class="list-group-item" data-parent="#menu3">Opret ny service</a>
+                    <a href="?p=dashboard&view=nyservice" class="list-group-item" data-parent="#menu3">Opret ny service</a>
                     <a href="#" class="list-group-item" data-parent="#menu3">Liste af servicer</a>
                 </div>
 
@@ -40,7 +40,7 @@
 
 
                 <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Side indstillinger</span></a>
-                <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="hidden-sm-down">Log af</span></a>
+                <a href="?p=dashboard&view=logout" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="hidden-sm-down">Log af</span></a>
             </div>
         </div>
     </div>

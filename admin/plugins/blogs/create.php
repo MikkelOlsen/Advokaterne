@@ -56,7 +56,6 @@
     $stmt = $conn->prepare("SELECT categoryName, id FROM blogcategory");
 			$stmt->execute();
 			$result = $stmt->setFetchMode(PDO::FETCH_OBJ); 
-    //print_r($error);
 ?>
 
 <div class="container">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 15. 08 2017 kl. 15:03:42
+-- Genereringstid: 21. 08 2017 kl. 12:38:16
 -- Serverversion: 5.6.24
 -- PHP-version: 5.6.8
 
@@ -29,7 +29,15 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `blogcategory` (
   `id` int(11) NOT NULL,
   `categoryName` varchar(25) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `blogcategory`
+--
+
+INSERT INTO `blogcategory` (`id`, `categoryName`) VALUES
+(4, 'Nyheder'),
+(5, 'retard');
 
 -- --------------------------------------------------------
 
@@ -45,7 +53,19 @@ CREATE TABLE IF NOT EXISTS `blogpost` (
   `fk_user` int(11) DEFAULT NULL,
   `fk_cat` int(11) DEFAULT NULL,
   `date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `blogpost`
+--
+
+INSERT INTO `blogpost` (`id`, `postTitle`, `postText`, `fk_img`, `fk_user`, `fk_cat`, `date`) VALUES
+(22, 'Blog V2', 'Dette er min fÃ¸rste rigtige post, sÃ¥ lad os da se om der kan redigeres i den. Man har vel lov at hÃ¥be', 17, 1, 4, '2017-08-17 14:35:28'),
+(23, 'Yus', 'Min tard er din tard&#13;&#10;', 18, 1, 5, '2017-08-18 12:44:55'),
+(24, 'Post V1', 'Yusser', NULL, 1, 4, '2017-08-18 12:46:07'),
+(25, 'Post V1', 'Yusser', NULL, 1, 4, '2017-08-18 12:46:16'),
+(26, 'FUck', 'Jeg virker', NULL, 1, 4, '2017-08-18 12:47:18'),
+(27, 'OG nu igen', 'YAAA', NULL, 1, 4, '2017-08-18 12:51:52');
 
 -- --------------------------------------------------------
 
@@ -59,7 +79,14 @@ CREATE TABLE IF NOT EXISTS `information` (
   `purpose` text,
   `motto` text,
   `fk_img` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `information`
+--
+
+INSERT INTO `information` (`id`, `history`, `purpose`, `motto`, `fk_img`) VALUES
+(1, 'oh', 'yeah', 'baby', 17);
 
 -- --------------------------------------------------------
 
@@ -71,7 +98,15 @@ CREATE TABLE IF NOT EXISTS `media` (
   `id` int(11) NOT NULL,
   `path` varchar(255) DEFAULT NULL,
   `type` varchar(90) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `media`
+--
+
+INSERT INTO `media` (`id`, `path`, `type`) VALUES
+(17, '1502973346_work.jpg', 'image/jpeg'),
+(18, '1503053095_icons.png', 'image/png');
 
 -- --------------------------------------------------------
 
@@ -129,7 +164,16 @@ CREATE TABLE IF NOT EXISTS `userroles` (
   `id` int(11) NOT NULL,
   `navn` varchar(10) DEFAULT NULL,
   `niveau` tinyint(2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `userroles`
+--
+
+INSERT INTO `userroles` (`id`, `navn`, `niveau`) VALUES
+(1, 'Superadmin', 99),
+(2, 'Admin', 90),
+(3, 'Medarb', 50);
 
 -- --------------------------------------------------------
 
@@ -143,7 +187,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(128) DEFAULT NULL,
   `password` varchar(70) DEFAULT NULL,
   `fk_userrole` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `users`
+--
+
+INSERT INTO `users` (`id`, `navn`, `email`, `password`, `fk_userrole`) VALUES
+(1, 'Retardo Gert', 'robot@ninja.com', '$2y$12$j/tIF/4vuIDddsKRww4jqubibYq3TKp/k9VfrTA1S0AuVv51s5f8G', 1),
+(4, 'Fucktard', 'retard@bob.com', '$2y$12$yAWTVKlF6ScVcu4wiLMVpeyGUgwdrVnmJ4MEl9zEeL3njVC9PxQMu', 3);
 
 --
 -- Begrænsninger for dumpede tabeller
@@ -211,22 +263,22 @@ ALTER TABLE `users`
 -- Tilføj AUTO_INCREMENT i tabel `blogcategory`
 --
 ALTER TABLE `blogcategory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- Tilføj AUTO_INCREMENT i tabel `blogpost`
 --
 ALTER TABLE `blogpost`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- Tilføj AUTO_INCREMENT i tabel `information`
 --
 ALTER TABLE `information`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- Tilføj AUTO_INCREMENT i tabel `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- Tilføj AUTO_INCREMENT i tabel `services`
 --
@@ -246,12 +298,12 @@ ALTER TABLE `testimonials`
 -- Tilføj AUTO_INCREMENT i tabel `userroles`
 --
 ALTER TABLE `userroles`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Tilføj AUTO_INCREMENT i tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- Begrænsninger for dumpede tabeller
 --
