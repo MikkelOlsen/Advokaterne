@@ -103,6 +103,12 @@ if(secIsLoggedIn()) {
                     case 'udtalelser';
                         include_once './admin/plugins/testimonials/show.php';
                         break;
+                    case 'deltest';
+                        include_once './admin/plugins/testimonials/delete.php';
+                        break;
+                    case 'edittest';
+                        include_once './admin/plugins/testimonials/edit.php';
+                        break;
 
 
                    
