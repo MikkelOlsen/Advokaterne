@@ -95,6 +95,16 @@ if(secIsLoggedIn()) {
                         include_once './admin/plugins/settings/edit.php';
                         break;
 
+                    
+                    //TESTIMONIAL CASES
+                    case 'nyudtalelse';
+                        include_once './admin/plugins/testimonials/create.php';
+                        break;
+                    case 'udtalelser';
+                        include_once './admin/plugins/testimonials/show.php';
+                        break;
+
+
                    
 
                     

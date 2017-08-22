@@ -34,8 +34,8 @@
 
                 <a href="#menu4" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="hidden-sm-down">Kundeudtalelser </span></a>
                 <div class="collapse" id="menu4">
-                    <a href="#" class="list-group-item" data-parent="#menu4">Opret ny kundeudtalelse</a>
-                    <a href="#" class="list-group-item" data-parent="#menu4">Liste af kundeudtalelser</a>
+                    <a href="?p=dashboard&view=nyudtalelse" class="list-group-item" data-parent="#menu4">Opret ny kundeudtalelse</a>
+                    <a href="?p=dashboard&view=udtalelser" class="list-group-item" data-parent="#menu4">Liste af kundeudtalelser</a>
                 </div>
 
 
