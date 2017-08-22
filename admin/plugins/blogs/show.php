@@ -1,8 +1,6 @@
 <h1>Blog posts</h1><?php
-    $stmt = $conn->prepare("SELECT blogpost.id, postTitle, postText, blogpost.date, media.path, users.navn, blogcategory.categoryName
+    $stmt = $conn->prepare("SELECT blogpost.id, postTitle, postText, blogpost.date, users.navn, blogcategory.categoryName
                             FROM blogpost
-                            INNER JOIN media
-                            ON blogpost.fk_img = media.id
                             INNER JOIN users
                             ON blogpost.fk_user = users.id
                             INNER JOIN blogcategory 
@@ -30,9 +28,14 @@
         <tbody>
           <?php
             foreach($stmt->fetchAll() as $value) {
+                $stmtImg = getFromDB("SELECT media.path
+                                      FROM media
+                                      INNER JOIN blogpost
+                                      ON blogpost.fk_img = media.id
+                                      WHERE blogpost.id = :id", $value->id);
                 $dato = date('d/m/Y', strtotime($value->date));
                 echo '<tr>
-                        <td><img class="blog-img" src="./media/'.$value->path.'" alt=""></td>
+                        <td><img class="blog-img" src="./media/'.$stmtImg['path'].'" alt=""></td>
                         <td>'.$value->postTitle.'</td>
                         <td>'.$value->postText.'</td>
                         <td>'.$value->categoryName.'</td>

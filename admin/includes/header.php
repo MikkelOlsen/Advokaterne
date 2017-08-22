@@ -29,7 +29,7 @@
                 <a href="#menu3" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="hidden-sm-down">Service </span></a>
                 <div class="collapse" id="menu3">
                     <a href="?p=dashboard&view=nyservice" class="list-group-item" data-parent="#menu3">Opret ny service</a>
-                    <a href="#" class="list-group-item" data-parent="#menu3">Liste af servicer</a>
+                    <a href="?p=dashboard&view=services" class="list-group-item" data-parent="#menu3">Liste af servicer</a>
                 </div>
 
                 <a href="#menu4" class="list-group-item collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-book"></i> <span class="hidden-sm-down">Kundeudtalelser </span></a>
@@ -39,7 +39,7 @@
                 </div>
 
 
-                <a href="#" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Side indstillinger</span></a>
+                <a href="?p=dashboard&view=settings" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Side indstillinger</span></a>
                 <a href="?p=dashboard&view=logout" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="hidden-sm-down">Log af</span></a>
             </div>
         </div>

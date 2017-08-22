@@ -56,28 +56,43 @@ if(secIsLoggedIn()) {
 
                     //USER CASES
                     case 'usercreate';
-                        include_once '/admin/plugins/users/create.php';
+                        include_once './admin/plugins/users/create.php';
                         break;
                     case 'users';
-                        include_once '/admin/plugins/users/show.php';
+                        include_once './admin/plugins/users/show.php';
                         break;
                     case 'deluser';
-                        include_once '/admin/plugins/users/delete.php';
+                        include_once './admin/plugins/users/delete.php';
                         break;
                     case 'edituser';
-                        include_once '/admin/plugins/users/edit.php';
+                        include_once './admin/plugins/users/edit.php';
                         break;
 
                     
                     //INFORMATION CASES
                     case 'information';
-                        include_once '/admin/plugins/info/edit.php';
+                        include_once './admin/plugins/info/edit.php';
                         break;
 
                     
                     //SERVICE CASES
                     case 'nyservice';
-                        include_once '/admin/plugins/service/create.php';
+                        include_once './admin/plugins/service/create.php';
+                        break;
+                    case 'services';
+                        include_once './admin/plugins/service/show.php';
+                        break;
+                    case 'delserv';
+                        include_once './admin/plugins/service/delete.php';
+                        break;
+                    case 'editserv';
+                        include_once './admin/plugins/service/edit.php';
+                        break;
+
+                    
+                    //SETTINGS CASES
+                    case 'settings';
+                        include_once './admin/plugins/settings/edit.php';
                         break;
 
                    

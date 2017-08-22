@@ -14,6 +14,7 @@
 		$beskrivelse 	 = validMixedBetween($post['beskrivelse'], 1, 511) ? $post['beskrivelse'] 	: $error['beskrivelse'] = 'fejl besked beskrivelse!';
 		if(sizeof($error) === 0){
             if($_FILES['filUpload']['error'] == 4) {
+				echo 'tom';
                 sqlQueryPrepared(
                 "
 					INSERT INTO `services`(`serviceName` ,`serviceText`, `fk_img`) VALUES (:name, :text, :img);
