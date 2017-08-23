@@ -28,7 +28,7 @@
                 ));
                 header('Location: ?p=dashboard&view=information');
             } else {
-            $img = mediaImageUploader('filUpload');
+            $billede = mediaImageUploader('filUpload');
             if($billede['code']) {
                 $collectImage = getFromDB("SELECT media.path, media.id
                                            FROM media
@@ -40,7 +40,7 @@
             
             if(sqlQueryPrepared(
                     "
-                        UPDATE `media` SET `path` = :path WHERE `id` = :img
+                        UPDATE `media` SET `path` = :path WHERE `id` = :img;
 						UPDATE `information` SET `history` = :history, `purpose` = :purpose, `motto` = :motto WHERE id = :id
 					",
 					array(

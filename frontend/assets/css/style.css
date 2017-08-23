@@ -127,6 +127,21 @@ li .nav-link {
     padding-top: 80px;
 }
 
+.serviceImg {
+    height: 148px;
+    width: 228px;
+}
+
+.blogImg {
+    height: 108px;
+    width: 108px;
+}
+
+.infoImg {
+    height: 172px;
+    width: 338px;
+}
+
 /*    --------------------------------------------------
 	:: Login Section
 	-------------------------------------------------- */
