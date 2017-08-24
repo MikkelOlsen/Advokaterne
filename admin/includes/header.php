@@ -39,7 +39,13 @@
                 </div>
 
 
+
+                <a href="?p=dashboard&view=beskeder" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Beskeder</span></a>
+
+                <a href="?p=dashboard&view=nyhedsbreve" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-film"></i> <span class="hidden-sm-down">Tilmeldte til nyheder</span></a>
+
                 <a href="?p=dashboard&view=settings" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-list"></i> <span class="hidden-sm-down">Side indstillinger</span></a>
+                
                 <a href="?p=dashboard&view=logout" class="list-group-item collapsed" data-parent="#sidebar"><i class="fa fa-clock-o"></i> <span class="hidden-sm-down">Log af</span></a>
             </div>
         </div>

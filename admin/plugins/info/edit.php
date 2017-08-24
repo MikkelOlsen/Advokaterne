@@ -89,12 +89,12 @@
         </div>
 
         <div class="input-field col s12">
-        <label for="purpose">Mål</label>
+        <label for="purpose">Advokaternes formål</label>
 		<textarea name="purpose" class="form-control"><?php echo $collect['purpose'] ?></textarea>
         </div>
 
         <div class="input-field col s12">
-        <label for="motto">Motto</label>
+        <label for="motto">Vil du være en af vores samarbejdspartnere?</label>
 		<textarea name="motto" class="form-control"><?php echo $collect['motto'] ?></textarea>
         </div>
 

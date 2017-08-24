@@ -1,42 +1,60 @@
+<?php
+    $collectInfo = getFromDB("SELECT history, purpose, motto
+                              FROM information
+                              WHERE id = :id", 1);
+                              
+?>
+
 <section class="container row">
     <section class="col-md-12">
         <h4>HISTORIEN</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore numquam dolor ab aut facere hic nesciunt corporis reiciendis suscipit, optio sit adipisci autem similique, totam! Voluptatum iste facere recusandae officiis.</p>
+        <p><?php echo $collectInfo['history'] ?></p>
 
         <hr>
 
-        <h4>HISTORIEN</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore numquam dolor ab aut facere hic nesciunt corporis reiciendis suscipit, optio sit adipisci autem similique, totam! Voluptatum iste facere recusandae officiis.</p>
+        <h4>ADVOKATERNES FORMÅL</h4>
+        <p><?php echo $collectInfo['purpose'] ?></p>
 
         <hr>
 
-        <h4>HISTORIEN</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore numquam dolor ab aut facere hic nesciunt corporis reiciendis suscipit, optio sit adipisci autem similique, totam! Voluptatum iste facere recusandae officiis.</p>
+        <h4>VIL DU VÆRE EN AF VORES SAMARBEJDSPARTNERE?</h4>
+        <p><?php echo $collectInfo['motto'] ?></p>
 
-    <p>Kontakt Os</p>
+        <a href="?p=kontakt">
+            <p>Kontakt os</p>
+        </a>
     
     </section>
+
+<?php
+    
+?>
     
     <section class="col-md-12 custombox">
         <h4 class="padding-bottom">HVAD KUNDERNE MENER</h4>
 
         <div class="row">
+
+        <?php
+    $stmtTesti = $conn->prepare("SELECT name, story
+    FROM testimonials
+    ORDER BY RAND()
+    LIMIT 4");
+    $stmtTesti->execute();
+
+    $resultTest = $stmtTesti->setFetchMode(PDO::FETCH_OBJ);
+
+    foreach($stmtTesti->fetchAll() as $value) {
+        echo 
+        '
             <div class="col-md-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sodales semper. Cras libero lorem, posuere ac pharetra sed, porttitor ac elit. Etiam sed sem nec orci molestie convallis. Donec suscipit fringilla ipsum, id iaculis ante dignissim sit amet. Morbi venenatis tincidunt turpis, eget fermentum orci tristique nec. Suspendisse viverra mollis velit sed adipiscing. Maecenas quis erat felis, nec rutrum magna.</p>
-                <p class="text-right"><i>- En glad klient</i></p>
-            </div>
-            <div class="col-md-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sodales semper. Cras libero lorem, posuere ac pharetra sed, porttitor ac elit. Etiam sed sem nec orci molestie convallis. Donec suscipit fringilla ipsum, id iaculis ante dignissim sit amet. Morbi venenatis tincidunt turpis, eget fermentum orci tristique nec. Suspendisse viverra mollis velit sed adipiscing. Maecenas quis erat felis, nec rutrum magna.</p>
-                <p class="text-right"><i>- En glad klient</i></p>
-            </div>
-            <div class="col-md-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sodales semper. Cras libero lorem, posuere ac pharetra sed, porttitor ac elit. Etiam sed sem nec orci molestie convallis. Donec suscipit fringilla ipsum, id iaculis ante dignissim sit amet. Morbi venenatis tincidunt turpis, eget fermentum orci tristique nec. Suspendisse viverra mollis velit sed adipiscing. Maecenas quis erat felis, nec rutrum magna.</p>
-                <p class="text-right"><i>- En glad klient</i></p>
-            </div>
-            <div class="col-md-6">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat sodales semper. Cras libero lorem, posuere ac pharetra sed, porttitor ac elit. Etiam sed sem nec orci molestie convallis. Donec suscipit fringilla ipsum, id iaculis ante dignissim sit amet. Morbi venenatis tincidunt turpis, eget fermentum orci tristique nec. Suspendisse viverra mollis velit sed adipiscing. Maecenas quis erat felis, nec rutrum magna.</p>
-                <p class="text-right"><i>- En glad klient</i></p>
-            </div>
+                <p>'.$value->story.'</p>
+                <p class="text-right"><i>- '.$value->name.'</i></p>
+            </div>      
+        ';
+    }
+
+?>
         </div>
     </section>
 

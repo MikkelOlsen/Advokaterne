@@ -5,7 +5,7 @@ if(secCheckLevel() <= 90) {
 
     $error = [];
     $id = '1';
-$collect = getFromDB("SELECT copyright, facebook, twitter, googlePlus, siteName, siteAdress, siteEmail, siteCity, siteZip, sitePhone
+$collect = getFromDB("SELECT copyright, facebook, twitter, googlePlus, siteName, siteAdress, siteEmail, siteCity, siteZip, sitePhone, contactMsg
                       FROM sitesettings
                       WHERE id = :id", 1);
 if(secCheckMethod('POST')) {
@@ -25,6 +25,7 @@ if(secCheckMethod('POST')) {
     $siteZip = validIntBetween($post['siteZip'], 2, 10) ? $post['siteZip'] : $error['siteZip'] = 'Det er ikke en gyldig zip code.';
     $sitePhone = validTel($post['sitePhone']) ? $post['sitePhone'] : $error['sitePhone'] = 'Dette er ikke et gyldigt telefon nummer.';
     $copyright = validStringBetween($post['copyright'], 2, 45) ? $post['copyright'] : $error['copyright'] = 'Der er fejl i copyright.';
+    $contactMsg = validMixedBetween($post['contactMsg'], 1, 511) ? $post['contactMsg'] : $error['contactMsg'] = 'Der er fejl i din kontakt teksten';
     if(sizeof($error) === 0) {
         echo 'success!';
         if(sqlQueryPrepared(
@@ -41,7 +42,8 @@ if(secCheckMethod('POST')) {
                 `siteAdress`= :siteAdress, 
                 `siteEmail`= :siteEmail, 
                 `siteZip`= :siteZip, 
-                `sitePhone`= :sitePhone
+                `sitePhone`= :sitePhone,
+                `contactMsg` = :contactMsg
                 WHERE id = :id
             ",
             array(
@@ -55,6 +57,7 @@ if(secCheckMethod('POST')) {
                 ':siteEmail' => $siteEmail,
                 ':siteZip' => $siteZip,
                 ':sitePhone' => $sitePhone,
+                ':contactMsg' => $contactMsg,
                 ':id' => $id
             )
             )) {
@@ -122,6 +125,11 @@ if(secCheckMethod('POST')) {
                 <div class="input-field col s12">
                 <label for="copyright">Copyright</label>
                 <input class="form-control" type="text" value="<?php echo $collect['copyright'] ?>" name="copyright"  id="copyright" min="2" max="25"><br />
+                </div>
+
+                <div class="input-field col s12">
+                <label for="contactMsg">Kontakt tekst</label>
+                <textarea name="contactMsg" class="form-control"><?php echo $collect['contactMsg'] ?></textarea>
                 </div>
 
                 </div>

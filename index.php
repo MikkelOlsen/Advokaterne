@@ -8,6 +8,9 @@
     require_once './lib/user.php';
     require_once './lib/media.php';
     @$user = userGet($_SESSION['userid']);
+    $sitesettings = getFromDB("SELECT copyright, facebook, twitter, googlePlus, siteName, siteAdress, siteEmail, siteCity, siteZip, sitePhone, contactMsg
+                                FROM sitesettings
+                                WHERE id = :id", 1);
     
 ?>
 
@@ -17,7 +20,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Advokaterne</title>
+    <title><?php echo $sitesettings['siteName'] ?></title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./frontend/assets/css/style.css">

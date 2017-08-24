@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-12 col-sm-12 col-12">
-                <h2><a href="?p=home" class="header-link header-text">ADVOKATERNE</a></h2>
+                <h2><a href="?p=home" class="header-link header-text"><?php echo $sitesettings['siteName'] ?></a></h2>
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12 col-12"> 
                 <nav class="menu">

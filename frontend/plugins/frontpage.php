@@ -93,7 +93,6 @@
 </div>
     </section>
 
-
     <section class="col-lg-4 col-md-12">
         <?php
             $stmtInfo = getFromDB("SELECT motto, media.path
@@ -101,6 +100,14 @@
                                    INNER JOIN media
                                    ON information.fk_img = media.id
                                    WHERE information.id = :id", 1);
+
+                $max_length = 170;
+
+                if (strlen($stmtInfo['motto']) > $max_length)
+                {
+                    $offset = ($max_length - 3) - strlen($stmtInfo['motto']);
+                    $stmtInfo['motto'] = substr($stmtInfo['motto'], 0, strrpos($stmtInfo['motto'], ' ', $offset)) . '...<br>  <a href="?p=omos">Læs mere</a>';
+                }
 
             echo '
                 <div class="row">
@@ -126,12 +133,12 @@
             $resultTest = $stmtTesti->setFetchMode(PDO::FETCH_OBJ);
 
             foreach($stmtTesti->fetchAll() as $valueTesti) {
-                $max_length = 150;
+                $max_length = 110;
 
                 if (strlen($valueTesti->story) > $max_length)
                 {
                     $offset = ($max_length - 3) - strlen($valueTesti->story);
-                    $valueTesti->story = substr($valueTesti->story, 0, strrpos($valueTesti->story, ' ', $offset)) . '...<br>  <a href="?p=services">Læs mere</a>';
+                    $valueTesti->story = substr($valueTesti->story, 0, strrpos($valueTesti->story, ' ', $offset)) . '...<br>  <a href="?p=omos">Læs mere</a>';
                 }
                 echo 
                 '
@@ -143,16 +150,46 @@
             </div>
         <hr>
         </div>
-
+<?php
+    if(secCheckMethod('POST')) {
+        $post = secGetInputArray(INPUT_POST);
+        $error = [];
+        $email = validEmail($post['email']) ? $post['email'] : $error['email'] = '<div class="alert alert-danger">Dette er ikke en gyldig email.</div>';
+        if(sizeof($error) === 0) {
+          if(sqlQueryPrepared(
+            "
+              INSERT INTO `newsletter`(`email`) VALUES (:email);
+            ",
+            array(
+              ':email' => $email
+            ) 
+          )) {
+            $success = '<div class="alert alert-success" role="alert">Tak fordi du tilmeldte dig vores nyehdsbrev!</div>';
+          } 
+          else {
+            $success = '<div class="alert alert-warning" role="alert">Der skete en fejl ved din tilmelding. Prøv igen.</div>';
+          }
+        } else {
+          $success = '<div class="alert alert-danger" role="alert">Der gik noget galt! Se fejlbeskederne!</div>';
+        }
+      }
+?>
         <div class="row">
             <div class="col-lg-12">
+                <?php
+                    if(!empty($success)) {
+                        echo $success;
+                    }
+                ?>
                 <form action="" name="search" class="form-horizontal" enctype="multipart/form-data" method="POST">
+                <label for="email">Tilmeld dig vores nyhedsbrev.</label>
                 <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                <input type="text" class="form-control" name="email" placeholder="Email" aria-label="email">
                 <span class="input-group-btn">
-                    <button class="btn btn-dark" type="button">Go!</button>
+                    <button class="btn btn-dark" type="submit">Go!</button>
                 </span>
                 </div>
+                <?=@$error['email']?>
                 </form>
             </div>
         </div>

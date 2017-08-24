@@ -110,6 +110,21 @@ if(secIsLoggedIn()) {
                         include_once './admin/plugins/testimonials/edit.php';
                         break;
 
+                    
+                    //MESSAGES AND NEWSLETTER
+                    case 'beskeder';
+                        include_once './admin/plugins/msg/messages.php';
+                        break;
+                    case 'nyhedsbreve';
+                        include_once './admin/plugins/msg/newsletter.php';
+                        break;
+                    case 'delNews';
+                        include_once './admin/plugins/msg/delnews.php';
+                        break;
+                    case 'delMsg';
+                        include_once './admin/plugins/msg/delMsg.php';
+                        break;
+
 
                    
 
