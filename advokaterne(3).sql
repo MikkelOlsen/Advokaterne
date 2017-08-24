@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 21. 08 2017 kl. 12:38:16
+-- Genereringstid: 24. 08 2017 kl. 13:20:47
 -- Serverversion: 5.6.24
 -- PHP-version: 5.6.8
 
@@ -60,12 +60,8 @@ CREATE TABLE IF NOT EXISTS `blogpost` (
 --
 
 INSERT INTO `blogpost` (`id`, `postTitle`, `postText`, `fk_img`, `fk_user`, `fk_cat`, `date`) VALUES
-(22, 'Blog V2', 'Dette er min fÃ¸rste rigtige post, sÃ¥ lad os da se om der kan redigeres i den. Man har vel lov at hÃ¥be', 17, 1, 4, '2017-08-17 14:35:28'),
-(23, 'Yus', 'Min tard er din tard&#13;&#10;', 18, 1, 5, '2017-08-18 12:44:55'),
-(24, 'Post V1', 'Yusser', NULL, 1, 4, '2017-08-18 12:46:07'),
-(25, 'Post V1', 'Yusser', NULL, 1, 4, '2017-08-18 12:46:16'),
-(26, 'FUck', 'Jeg virker', NULL, 1, 4, '2017-08-18 12:47:18'),
-(27, 'OG nu igen', 'YAAA', NULL, 1, 4, '2017-08-18 12:51:52');
+(22, 'Blog V2', 'Dette er min fÃ¸rste rigtige post, sÃ¥ lad os da se om der kan redigeres i den. Man har vel lov at hÃ¥be', 17, 1, 4, '2017-06-13 14:35:28'),
+(23, 'Yus', 'Min tard er din tard&#13;&#10;', 18, 1, 5, '2017-08-18 12:44:55');
 
 -- --------------------------------------------------------
 
@@ -86,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `information` (
 --
 
 INSERT INTO `information` (`id`, `history`, `purpose`, `motto`, `fk_img`) VALUES
-(1, 'oh', 'yeah', 'baby', 17);
+(1, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus suscipit quae, dolor commodi est dolorem possimus expedita officiis id ex voluptatem perspiciatis enim similique obcaecati asperiores? Distinctio labore sapiente recusandae?&#13;&#10;', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus suscipit quae, dolor commodi est dolorem possimus expedita officiis id ex voluptatem perspiciatis enim similique obcaecati asperiores? Distinctio labore sapiente recusandae?&#13;&#10;', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus suscipit quae, dolor commodi est dolorem possimus expedita officiis id ex voluptatem perspiciatis enim similique obcaecati asperiores? Distinctio labore sapiente recusandae?&#13;&#10;', 17);
 
 -- --------------------------------------------------------
 
@@ -98,15 +94,57 @@ CREATE TABLE IF NOT EXISTS `media` (
   `id` int(11) NOT NULL,
   `path` varchar(255) DEFAULT NULL,
   `type` varchar(90) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Data dump for tabellen `media`
 --
 
 INSERT INTO `media` (`id`, `path`, `type`) VALUES
-(17, '1502973346_work.jpg', 'image/jpeg'),
-(18, '1503053095_icons.png', 'image/png');
+(17, '1503556228_people.jpg', 'image/jpeg'),
+(18, '1503556146_work.jpg', 'image/png'),
+(21, '1503556244_agent.jpg', 'image/jpeg'),
+(22, '1503556253_agent.jpg', 'image/jpeg'),
+(23, '1503556271_agent.jpg', 'image/jpeg'),
+(24, '1503556305_agent.jpg', 'image/jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur-dump for tabellen `messages`
+--
+
+CREATE TABLE IF NOT EXISTS `messages` (
+  `id` int(11) NOT NULL,
+  `senderName` varchar(45) NOT NULL,
+  `senderEmail` varchar(65) NOT NULL,
+  `senderMsg` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `messages`
+--
+
+INSERT INTO `messages` (`id`, `senderName`, `senderEmail`, `senderMsg`) VALUES
+(2, 'Min arm', 'ender@idit.dk', 'rÃ¸vhul lige nu');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur-dump for tabellen `newsletter`
+--
+
+CREATE TABLE IF NOT EXISTS `newsletter` (
+  `id` int(11) NOT NULL,
+  `email` varchar(65) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `newsletter`
+--
+
+INSERT INTO `newsletter` (`id`, `email`) VALUES
+(2, 'mikkel@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -119,7 +157,17 @@ CREATE TABLE IF NOT EXISTS `services` (
   `serviceName` varchar(25) DEFAULT NULL,
   `serviceText` text,
   `fk_img` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `services`
+--
+
+INSERT INTO `services` (`id`, `serviceName`, `serviceText`, `fk_img`) VALUES
+(2, 'Uhm', 'virke', 21),
+(3, 'Billede', 'test', 22),
+(4, 'Law V2', 'This is the law! obey the law!', 23),
+(5, 'Rebels', 'DENIED ACCESS!', 24);
 
 -- --------------------------------------------------------
 
@@ -129,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `services` (
 
 CREATE TABLE IF NOT EXISTS `sitesettings` (
   `id` int(11) NOT NULL,
-  `copyright` varchar(25) DEFAULT NULL,
+  `copyright` varchar(45) DEFAULT NULL,
   `facebook` varchar(65) DEFAULT NULL,
   `twitter` varchar(65) DEFAULT NULL,
   `googlePlus` varchar(65) DEFAULT NULL,
@@ -137,8 +185,17 @@ CREATE TABLE IF NOT EXISTS `sitesettings` (
   `siteCity` varchar(45) DEFAULT NULL,
   `siteAdress` varchar(45) DEFAULT NULL,
   `siteEmail` varchar(45) DEFAULT NULL,
-  `siteZip` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `siteZip` varchar(45) DEFAULT NULL,
+  `sitePhone` int(15) NOT NULL,
+  `contactMsg` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `sitesettings`
+--
+
+INSERT INTO `sitesettings` (`id`, `copyright`, `facebook`, `twitter`, `googlePlus`, `siteName`, `siteCity`, `siteAdress`, `siteEmail`, `siteZip`, `sitePhone`, `contactMsg`) VALUES
+(1, 'Copyright 2012. All rights reserved', 'http://facebook.com', 'http://twitter.com', 'http://google.com', 'ADVOKADOERNE', 'Test Byen', 'En rigtig adresse 32', 'min@mail.com', '4500', 50102030, 'Herunder kan du finde vores kontakt oplysninger');
 
 -- --------------------------------------------------------
 
@@ -152,7 +209,16 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
   `story` text,
   `rating` int(5) DEFAULT NULL,
   `date` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Data dump for tabellen `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `name`, `story`, `rating`, `date`) VALUES
+(1, 'En glad kunde', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus suscipit quae, dolor commodi est dolorem possimus expedita officiis id ex voluptatem perspiciatis enim similique obcaecati asperiores? Distinctio labore sapiente recusandae?&#13;&#10;', NULL, '2017-08-24 08:32:10'),
+(2, 'En tilfreds kunde', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus suscipit quae, dolor commodi est dolorem possimus expedita officiis id ex voluptatem perspiciatis enim similique obcaecati asperiores? Distinctio labore sapiente recusandae?&#13;&#10;', NULL, '2017-08-24 08:32:18'),
+(3, 'Superb', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus suscipit quae, dolor commodi est dolorem possimus expedita officiis id ex voluptatem perspiciatis enim similique obcaecati asperiores? Distinctio labore sapiente recusandae?&#13;&#10;', NULL, '2017-08-24 08:32:33');
 
 -- --------------------------------------------------------
 
@@ -226,6 +292,18 @@ ALTER TABLE `media`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks for tabel `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks for tabel `newsletter`
+--
+ALTER TABLE `newsletter`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks for tabel `services`
 --
 ALTER TABLE `services`
@@ -278,22 +356,32 @@ ALTER TABLE `information`
 -- Tilføj AUTO_INCREMENT i tabel `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+--
+-- Tilføj AUTO_INCREMENT i tabel `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- Tilføj AUTO_INCREMENT i tabel `newsletter`
+--
+ALTER TABLE `newsletter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Tilføj AUTO_INCREMENT i tabel `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- Tilføj AUTO_INCREMENT i tabel `sitesettings`
 --
 ALTER TABLE `sitesettings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- Tilføj AUTO_INCREMENT i tabel `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- Tilføj AUTO_INCREMENT i tabel `userroles`
 --
